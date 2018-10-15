@@ -39,4 +39,4 @@ And you need to require it when you use our script in browser
 	mchart.draw(t_dt.datatable,t_dt.options);
 ```
 
-[demo]:	http://wyubin.github.io/gchartjs/	"multiple plot theme for data"
+[demo]:	http://wyubin.github.io/gchartjs/index.html	"multiple plot theme for data"
