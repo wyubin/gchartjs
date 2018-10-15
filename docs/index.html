@@ -1,0 +1,48 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<main>
+		<p>plot by line plot</p>
+		<div name="line_div" style="width:600px;height:300px"></div>
+		<p>plot by bar plot</p>
+		<div name="bar_div" style="width:600px;height:300px"></div>
+		<p>plot by scatter plot</p>
+		<div name="scatter_div" style="width:600px;height:300px"></div>
+		<p>plot by bubble plot</p>
+		<div name="bubble_div" style="width:600px;height:300px"></div>
+	</main>
+	<script src="./gchart.min.js"></script>
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+// get doms
+var doms = {};
+Array.prototype.slice.call(document.querySelectorAll('[name]')).map(function(v){
+	doms[v.getAttribute('name')]=v;
+});
+// value
+var val = {
+	data:[[1,2],[3,4]],
+	colnames:['cond1','cond2'],
+	rownames:['sample1','sample2']
+};
+// plot func
+var plot = () => {
+	var td,theme,tchart;
+	for(var tdom in doms){
+		theme = tdom.split('_')[0];
+		td = gchart.data_transform(theme,val);
+		tchart = new google.visualization[td.mode](doms[tdom]);
+		tchart.draw(td.datatable,td.options);
+	}
+};
+// setup window.load
+window.onload = function(){
+	google.charts.load('current', {packages: ['corechart','treemap']});
+	google.charts.setOnLoadCallback(function(){plot()});
+};
+
+</script>
+</body>
+</html>
