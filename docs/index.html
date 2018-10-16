@@ -5,13 +5,13 @@
 <body>
 	<main>
 		<p>plot by line plot</p>
-		<div name="line_div" style="width:600px;height:300px"></div>
+		<div name="line_div"></div>
 		<p>plot by bar plot</p>
-		<div name="bar_div" style="width:600px;height:300px"></div>
+		<div name="bar_div"></div>
 		<p>plot by scatter plot</p>
-		<div name="scatter_div" style="width:600px;height:300px"></div>
+		<div name="scatter_div"></div>
 		<p>plot by bubble plot</p>
-		<div name="bubble_div" style="width:600px;height:300px"></div>
+		<div name="bubble_div"></div>
 	</main>
 	<script src="./gchart.min.js"></script>
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -19,6 +19,8 @@
 // get doms
 var doms = {};
 Array.prototype.slice.call(document.querySelectorAll('[name]')).map(function(v){
+	v.style.width = '800px';
+	v.style.height = '300px';
 	doms[v.getAttribute('name')]=v;
 });
 // value
@@ -33,6 +35,7 @@ var plot = () => {
 	for(var tdom in doms){
 		theme = tdom.split('_')[0];
 		td = gchart.data_transform(theme,val);
+		td.options.legend = {position: 'top',maxLines:2};
 		tchart = new google.visualization[td.mode](doms[tdom]);
 		tchart.draw(td.datatable,td.options);
 	}
