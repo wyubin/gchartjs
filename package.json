@@ -1,0 +1,23 @@
+{
+  "name": "gchartjs",
+  "version": "1.0.0",
+  "description": "wrapper of google chart api datatable",
+  "main": "gchart.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyubin/gchartjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wyubin/gchartjs/issues"
+  },
+  "homepage": "https://github.com/wyubin/gchartjs#readme"
+}
