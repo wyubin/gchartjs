@@ -1,4 +1,4 @@
-require('../../lib/stdlib.array.js');
+require('jsStdlib/stdlib.array.js');
 var extend = require('util')._extend;
 
 /**

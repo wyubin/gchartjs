@@ -9,6 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "style":{},
+  "browser":{
+	  "pages/demo_pkg.min.js":"pages/geochart.js",
+	  "gchart.min.js":"gchart.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wyubin/gchartjs.git"
@@ -19,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/wyubin/gchartjs/issues"
   },
-  "homepage": "https://github.com/wyubin/gchartjs#readme"
+  "homepage": "https://github.com/wyubin/gchartjs#readme",
+  "dependencies": {
+		"jsStdlib": "wyubin/jsStdlib"
+  }
 }
